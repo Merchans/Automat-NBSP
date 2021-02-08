@@ -94,3 +94,22 @@
 	}
 
 	run_automat_nbsp();
+
+
+	/*
+	 * Adds nbsp to the custom text
+	 * @param string $content
+	 * @param bool $echo - return or echo
+	 */
+	function add_nbsp( $content, $echo = true ) {
+		if ( ! isset( $automat ) ) {
+			$automat = new Automat_Nbsp_Public( $content, $echo );
+		}
+
+		if ( $echo ) {
+			echo $automat->chi_nbsp_automat( $content );
+		} else {
+			return $automat->chi_nbsp_automat( $content );
+		}
+	}
+

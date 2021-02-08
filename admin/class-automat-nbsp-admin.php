@@ -81,9 +81,10 @@
 			 * between the defined hooks and the functions defined in this
 			 * class.
 			 */
-
-			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/automat-nbsp-admin.css', array(), $this->version, 'all', true );
-			wp_enqueue_style( 'multi-select', plugin_dir_url( __FILE__ ) . 'css/multi-select.css', array(), $this->version, 'all', true );
+			if ( isset($_GET['page']) && $_GET['page'] == 'automat-nbsp' ) {
+				wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/automat-nbsp-admin.css', array(), $this->version, 'all', true );
+				wp_enqueue_style( 'multi-select', plugin_dir_url( __FILE__ ) . 'css/multi-select.css', array(), $this->version, 'all', true );
+			}
 
 		}
 
@@ -106,28 +107,30 @@
 			 * class.
 			 */
 
+			if ( isset($_GET['page']) && $_GET['page'] == 'automat-nbsp' ) {
 
-			wp_enqueue_script( 'quicksearch', plugin_dir_url( __FILE__ ) . 'js/quicksearch.js', array(
-					'jquery'
-			), $this->version, true );
+				wp_enqueue_script( 'quicksearch', plugin_dir_url( __FILE__ ) . 'js/quicksearch.js', array(
+						'jquery'
+				), $this->version, true );
 
-			wp_enqueue_script( 'multiple-select', plugin_dir_url( __FILE__ ) . 'js/multiple-select.js', array(
-					'jquery',
-					'quicksearch'
-			), $this->version, true );
+				wp_enqueue_script( 'multiple-select', plugin_dir_url( __FILE__ ) . 'js/multiple-select.js', array(
+						'jquery',
+						'quicksearch'
+				), $this->version, true );
 
-			wp_enqueue_script( 'multiple-select-otions', plugin_dir_url( __FILE__ ) . 'js/multiple-select-otions.js', array(
-					'jquery',
-					'quicksearch',
-					'multiple-select'
-			), $this->version, true );
+				wp_enqueue_script( 'multiple-select-otions', plugin_dir_url( __FILE__ ) . 'js/multiple-select-otions.js', array(
+						'jquery',
+						'quicksearch',
+						'multiple-select'
+				), $this->version, true );
 
-			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/automat-nbsp-admin.js', array(
-					'jquery',
-					'quicksearch',
-					'multiple-select',
-					'multiple-select-otions'
-			), $this->version, true );
+				wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/automat-nbsp-admin.js', array(
+						'jquery',
+						'quicksearch',
+						'multiple-select',
+						'multiple-select-otions'
+				), $this->version, true );
+			}
 		}
 
 		/**
@@ -137,9 +140,9 @@
 		 */
 		public function add_options_page() {
 
-			$this->plugin_screen_hook_suffix = add_options_page(
-					__( 'Automatic NBSP options', 'automatic-nbsp' ),
-					__( 'NBSP Settings', 'automatic-nbsp' ),
+			$this->plugin_screen_hook_suffix = add_management_page(
+					__( 'Automatic NBSP options', 'automat-nbsp' ),
+					__( 'NBSP Settings', 'automat-nbsp' ),
 					'manage_options',
 					$this->plugin_name,
 					array( $this, 'display_options_page' )
@@ -164,14 +167,14 @@
 			// Add a General section
 			add_settings_section(
 					$this->option_name . '_general',
-					__( 'Custom', TEXTDOMAIN ),
+					__( 'Custom', 'automat-nbsp' ),
 					array( $this, $this->option_name . '_general_cb' ),
 					$this->plugin_name
 			);
 
 			add_settings_field(
 					$this->option_name . '_area',
-					__( 'Words or phrases: <br> Each word or phrase on&nbsp;a&nbsp;new line', TEXTDOMAIN ),
+					__( 'Words or phrases: <br> Each word or phrase on&nbsp;a&nbsp;new line', 'automat-nbsp' ),
 					array( $this, $this->option_name . '_area_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -179,7 +182,7 @@
 			);
 			add_settings_field(
 					$this->option_name . '_not_in_automat[]',
-					__( "Disable non-breaking spaces to posts", TEXTDOMAIN ),
+					__( "Disable non-breaking spaces to posts", 'automat-nbsp' ),
 					array( $this, $this->option_name . '_not_in_automat_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -188,7 +191,7 @@
 
 			add_settings_field(
 					$this->option_name . '_case_sensitive',
-					__( "Case sensitive", TEXTDOMAIN ),
+					__( "Case sensitive", 'automat-nbsp' ),
 					array( $this, $this->option_name . '_case_sensitive_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -197,7 +200,7 @@
 
 			add_settings_field(
 					$this->option_name . '_punctuation_marks',
-					__( "Punctuation marks", TEXTDOMAIN ),
+					__( "Punctuation marks", 'automat-nbsp' ),
 					array( $this, $this->option_name . '_punctuation_marks_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -206,7 +209,7 @@
 
 			add_settings_field(
 					$this->option_name . '_content',
-					__( "Content", TEXTDOMAIN ),
+					__( "Content", 'automat-nbsp' ),
 					array( $this, $this->option_name . '_content_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -215,7 +218,7 @@
 
 			add_settings_field(
 					$this->option_name . '_title',
-					__( "Title", TEXTDOMAIN ),
+					__( "Title", 'automat-nbsp' ),
 					array( $this, $this->option_name . '_title_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -224,7 +227,7 @@
 
 			add_settings_field(
 					$this->option_name . '_excerpt',
-					__( "Excerpt", TEXTDOMAIN ),
+					__( "Excerpt", 'automat-nbsp' ),
 					array( $this, $this->option_name . '_excerpt_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -233,7 +236,7 @@
 
 			add_settings_field(
 					$this->option_name . '_comment',
-					__( "Comment", TEXTDOMAIN ),
+					__( "Comment", 'automat-nbsp' ),
 					array( $this, $this->option_name . '_comment_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -242,7 +245,7 @@
 
 			add_settings_field(
 					$this->option_name . '_widget',
-					__( "Widget", TEXTDOMAIN ),
+					__( "Widget", 'automat-nbsp' ),
 					array( $this, $this->option_name . '_widget_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -251,7 +254,7 @@
 
 			add_settings_field(
 					$this->option_name . '_numbers',
-					__( "Number", TEXTDOMAIN ),
+					__( "Number", 'automat-nbsp' ),
 					array( $this, $this->option_name . '_numbers_cb' ),
 					$this->plugin_name,
 					$this->option_name . '_general',
@@ -309,7 +312,7 @@
 		 * @since  1.0.0
 		 */
 		public function nbsp_dictionary_general_cb() {
-			echo '<h3>' . __( 'Use <code>&lt;?php add_nbsp($content); ?&gt;</code> to print the custom text with the automatic <code>&amp;nbsp;</code>. Use <code>&lt;?php add_nbsp($content, false); ?&gt;</code> to only return.', TEXTDOMAIN ) . '</h3>';
+			echo '<h3>' . __( 'Use <code>&lt;?php add_nbsp($content); ?&gt;</code> to print the custom text with the automatic <code>&amp;nbsp;</code>. Use <code>&lt;?php add_nbsp($content, false); ?&gt;</code> to only return.', 'automat-nbsp' ) . '</h3>';
 		}
 
 		/**
@@ -329,7 +332,7 @@
 				</div>
 				<p><label id="<?php echo $this->option_name . '_area' ?>"
 						  for="<?php echo $this->option_name . '_area' ?>">
-						<?php _e( 'Add <code>&amp;nbsp;</code> after each word or&nbsp;phrase from the list.', TEXTDOMAIN ); ?>
+						<?php _e( 'Add <code>&amp;nbsp;</code> after each word or&nbsp;phrase from the list.', 'automat-nbsp' ); ?>
 					</label></p>
 			</fieldset>
 			<?php
@@ -350,7 +353,7 @@
 				<div class="case-sensitive-box__wrapp">
 					<input id="' . $name . '" type="checkbox" name="' . $name . '"value="' . $is_punctuation_marks_checked . '" ' . $is_checked . ' class="hidden" > ' .
 					'<label for="' . $name . '"class="punctuation_marks_box toogle-box">' .
-					__( "If enabled, you need to type variants of word manually. <br> For example: 'and', 'AND', 'And' etc.", TEXTDOMAIN ) .
+					__( "If enabled, you need to type variants of word manually. <br> For example: 'and', 'AND', 'And' etc.", 'automat-nbsp' ) .
 					'</label>
 				</div>
 			</section>';
@@ -371,7 +374,7 @@
 				<div class="case-sensitive-box__wrapp">
 					<input id="' . $name . '" type="checkbox" name="' . $name . '" class="hidden" value="' . $is_case_sensitive_checked . '" ' . $is_checked . ' > ' .
 					'<label for="' . $name . '" class="punctuation_marks_box toogle-box">' .
-					__( "Add <code>&amp;nbsp;</code> before punctuation marks as <br> <code>!</code><code>?</code><code>:</code><code>;</code><code>%</code><code>«</code><code>»</code>", TEXTDOMAIN ) .
+					__( "Add <code>&amp;nbsp;</code> before punctuation marks as <br> <code>!</code><code>?</code><code>:</code><code>;</code><code>%</code><code>«</code><code>»</code>", 'automat-nbsp' ) .
 					'</label>
 				</div>
 			</section>';
@@ -392,7 +395,7 @@
 				<div class="case-sensitive-box__wrapp">
 					<input id="' . $name . '" type="checkbox" name="' . $name . '" value="' . $is_content_checked . '" ' . $is_checked . ' class="hidden" > ' .
 					'<label for="' . $name . '" class="punctuation_marks_box toogle-box">' .
-					__( "Add non-breaking spaces to contents", TEXTDOMAIN ) .
+					__( "Add non-breaking spaces to contents", 'automat-nbsp' ) .
 					'</label>
 				</div>
 			</section>';
@@ -413,7 +416,7 @@
 				<div class="case-sensitive-box__wrapp">
 					<input id="' . $name . '" type="checkbox" name="' . $name . '" value="' . $is_content_checked . '" ' . $is_checked . ' class="hidden" > ' .
 					'<label for="' . $name . '" class="punctuation_marks_box toogle-box">' .
-					__( "Add non-breaking spaces to titles", TEXTDOMAIN ) .
+					__( "Add non-breaking spaces to titles", 'automat-nbsp' ) .
 					'</label>
 				</div>
 			</section>';
@@ -434,7 +437,7 @@
 				<div class="case-sensitive-box__wrapp">
 					<input id="' . $name . '" type="checkbox" name="' . $name . '" value="' . $is_content_checked . '" ' . $is_checked . ' class="hidden" > ' .
 					'<label for="' . $name . '" class="punctuation_marks_box toogle-box">' .
-					__( "Add non-breaking spaces to excerpts", TEXTDOMAIN ) .
+					__( "Add non-breaking spaces to excerpts", 'automat-nbsp' ) .
 					'</label>
 				</div>
 			</section>';
@@ -455,7 +458,7 @@
 				<div class="case-sensitive-box__wrapp">
 					<input id="' . $name . '" type="checkbox" name="' . $name . '" value="' . $is_content_checked . '" ' . $is_checked . ' class="hidden" > ' .
 					'<label for="' . $name . '" class="punctuation_marks_box toogle-box">' .
-					__( "Add non-breaking spaces to comments", TEXTDOMAIN ) .
+					__( "Add non-breaking spaces to comments", 'automat-nbsp' ) .
 					'</label>
 				</div>
 			</section>';
@@ -476,7 +479,7 @@
 				<div class="case-sensitive-box__wrapp">
 					<input id="' . $name . '" type="checkbox" name="' . $name . '" value="' . $is_content_checked . '" ' . $is_checked . ' class="hidden" > ' .
 					'<label for="' . $name . '" class="punctuation_marks_box toogle-box">' .
-					__( "Add non-breaking spaces to widgets", TEXTDOMAIN ) .
+					__( "Add non-breaking spaces to widgets", 'automat-nbsp' ) .
 					'</label>
 				</div>
 			</section>';
@@ -498,7 +501,7 @@
 				<div class="case-sensitive-box__wrapp">
 					<input id="' . $name . '" type="checkbox" name="' . $name . '" value="' . $is_content_checked . '" ' . $is_checked . ' class="hidden" > ' .
 					'<label for="' . $name . '" class="punctuation_marks_box toogle-box">' .
-					__( "Add non-breaking spaces to numbers", TEXTDOMAIN ) .
+					__( "Add non-breaking spaces to numbers", 'automat-nbsp' ) .
 					'</label>
 				</div>
 			</section>';
@@ -543,7 +546,7 @@
 			</select>
 			<label id="<?php echo $name ?>"
 				   for="<?php echo $name ?>">
-				<?php _e( 'Choose articles that you do not want to use auto nbsp.', TEXTDOMAIN ); ?>
+				<?php _e( 'Choose articles that you do not want to use auto nbsp.', 'automat-nbsp' ); ?>
 			</label>
 			<?php
 		}

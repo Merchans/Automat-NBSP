@@ -40,6 +40,9 @@
 		 */
 		private $version;
 
+
+		private $content;
+
 		/**
 		 * Initialize the class and set its properties.
 		 *
@@ -294,6 +297,7 @@
 			return false;
 		}
 	}
+
 	/*
 	 * Sort phrases by numbers of containing words.
 	 * Phrases that contain more words need to be replaced first
@@ -401,13 +405,16 @@
 	 * @param string $content
 	 * @param bool $echo - return or echo
 	 */
-	function add_nbsp( $content, $echo = true ) {
-		if ( $echo ) {
-			echo chi_nbsp_automat( $content );
-		} else {
-			return chi_nbsp_automat( $content );
-		}
-	}
+
+//	function add_nbsp( $content, $echo = true ) {
+//		$automat = new Automat_Nbsp_Public($content, $echo  );
+//
+//		if ( $echo ) {
+//			echo $automat->chi_nbsp_automat( $content );
+//		} else {
+//			return $automat->chi_nbsp_automat( $content );
+//		}
+//	}
 
 	/*
 	 * Convert phrases to lowercase and uppercase

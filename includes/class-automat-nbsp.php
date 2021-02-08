@@ -73,6 +73,7 @@ class Automat_Nbsp {
 		} else {
 			$this->version = '1.0.0';
 		}
+
 		$this->plugin_name = 'automat-nbsp';
 
 		$this->load_dependencies();
