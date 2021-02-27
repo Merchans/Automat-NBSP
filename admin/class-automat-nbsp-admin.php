@@ -140,12 +140,13 @@
 		 */
 		public function add_options_page() {
 
-			$this->plugin_screen_hook_suffix = add_management_page(
+			$this->plugin_screen_hook_suffix = add_menu_page(
 					__( 'Automatic NBSP options', 'automat-nbsp' ),
 					__( 'NBSP Settings', 'automat-nbsp' ),
-					'manage_options',
-					$this->plugin_name,
-					array( $this, 'display_options_page' )
+					'edit_others_posts',
+					'automat-nbsp',
+					array( $this, 'display_options_page' ),
+					'dashicons-book-alt'
 			);
 
 		}

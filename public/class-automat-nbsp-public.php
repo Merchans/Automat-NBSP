@@ -128,7 +128,9 @@
 
 					//Possible beginnings of phrases
 					$beginnings = chi_nbsp_get_phrases_beginnings();
-
+					if ($phrase[0] == '(') {
+						$phrase = '\\' . $phrase;
+					}
 					// Pattern: beginning + word/phrase + whitespace
 					foreach ( $beginnings as $beginning ) {
 						$pattern[] = '/' . $beginning . '+' . $phrase . '+\\s+/';
@@ -184,7 +186,9 @@
 				$pattern = array();
 
 				foreach ( $phrases as $phrase ) {
-
+					if ($phrase[0] == '(') {
+						$phrase = '\\' . $phrase;
+					}
 					// Pattern: whitespace + word/phrase + whitespace
 					$pattern[] = '/\\s+' . $phrase . '+\\s+/';
 				}
@@ -262,6 +266,10 @@
 
 			// Strip whitespace from the beginning and end of a string
 			$trimed_phrases = trim( $phrase );
+
+			if ($phrase[0] == '(') {
+				$phrase = '\\' . $phrase;
+			}
 
 			//Escape special chars
 			$phrases_array[ $counter ] = preg_replace( "/(\.|\+|\?|\*|\^|\,|\:|\;|\"|\'|\/)/", "\\\\$1", $trimed_phrases );

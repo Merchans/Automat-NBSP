@@ -8,7 +8,7 @@ msgstr ""
 "Blank WordPress Pot "
 "v1.0.0\n"
 "POT-Creation-Date: "
-"2021-02-06 09:04+0100\n"
+"2021-02-15 09:16+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -50,3 +50,147 @@ msgstr ""
 "2.4.2\n"
 "X-Poedit-"
 "SearchPath-0: .\n"
+
+#: admin/class-automat-nbsp-admin.php:144
+msgid ""
+"Automatic NBSP options"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:145
+msgid "NBSP Settings"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:171
+msgid "Custom"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:178
+msgid ""
+"Words or phrases: <br> "
+"Each word or phrase "
+"on&nbsp;a&nbsp;new line"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:186
+msgid ""
+"Disable non-breaking "
+"spaces to posts"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:195
+msgid "Case sensitive"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:204
+msgid "Punctuation marks"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:213
+msgid "Content"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:222
+msgid "Title"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:231
+msgid "Excerpt"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:240
+msgid "Comment"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:249
+msgid "Widget"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:258
+msgid "Number"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:316
+msgid ""
+"Use <code>&lt;?php "
+"add_nbsp($content); ?&gt;"
+"</code> to print the "
+"custom text with the "
+"automatic <code>&amp;"
+"nbsp;</code>. Use "
+"<code>&lt;?php "
+"add_nbsp($content, "
+"false); ?&gt;</code> to "
+"only return."
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:336
+msgid ""
+"Add <code>&amp;nbsp;</"
+"code> after each word "
+"or&nbsp;phrase from the "
+"list."
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:357
+msgid ""
+"If enabled, you need to "
+"type variants of word "
+"manually. <br> For "
+"example: 'and', 'AND', "
+"'And' etc."
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:378
+msgid ""
+"Add <code>&amp;nbsp;</"
+"code> before punctuation "
+"marks as <br> <code>!</"
+"code><code>?</"
+"code><code>:</"
+"code><code>;</code><code>"
+"%</code><code>«</"
+"code><code>»</code>"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:399
+msgid ""
+"Add non-breaking spaces "
+"to contents"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:420
+msgid ""
+"Add non-breaking spaces "
+"to titles"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:441
+msgid ""
+"Add non-breaking spaces "
+"to excerpts"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:462
+msgid ""
+"Add non-breaking spaces "
+"to comments"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:483
+msgid ""
+"Add non-breaking spaces "
+"to widgets"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:505
+msgid ""
+"Add non-breaking spaces "
+"to numbers"
+msgstr ""
+
+#: admin/class-automat-nbsp-admin.php:550
+msgid ""
+"Choose articles that you "
+"do not want to use auto "
+"nbsp."
+msgstr ""

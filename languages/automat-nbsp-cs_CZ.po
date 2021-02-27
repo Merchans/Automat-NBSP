@@ -1,0 +1,136 @@
+# Blank WordPress Pot
+# Copyright 2014 ...
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Blank WordPress Pot v1.0.0\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2021-02-14 20:43+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Your Team <translations@example.com>\n"
+"Language: automat\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-automat-nbsp-admin.php:141
+msgid "Automatic NBSP options"
+msgstr "Automatické volby NBSP"
+
+#: admin/class-automat-nbsp-admin.php:142
+msgid "NBSP Settings"
+msgstr "NBSP nastavení"
+
+#: admin/class-automat-nbsp-admin.php:167
+msgid "Custom"
+msgstr "Úprava"
+
+#: admin/class-automat-nbsp-admin.php:174
+msgid "Words or phrases: <br> Each word or phrase on&nbsp;a&nbsp;new line"
+msgstr "Slova nebo fráze: Každé slovo nebo fráze vždy na nový řádek"
+
+#: admin/class-automat-nbsp-admin.php:182
+msgid "Disable non-breaking spaces to posts"
+msgstr "Vypnout automatické doplňování neviditelných mezer pro články."
+
+#: admin/class-automat-nbsp-admin.php:191
+msgid "Case sensitive"
+msgstr "Rozlišování malých a velkých písmen"
+
+#: admin/class-automat-nbsp-admin.php:200
+msgid "Punctuation marks"
+msgstr "Znamínka"
+
+#: admin/class-automat-nbsp-admin.php:209
+msgid "Content"
+msgstr "Obsah"
+
+#: admin/class-automat-nbsp-admin.php:218
+msgid "Title"
+msgstr "Nadpis"
+
+#: admin/class-automat-nbsp-admin.php:227
+msgid "Excerpt"
+msgstr "Perex"
+
+#: admin/class-automat-nbsp-admin.php:236
+msgid "Comment"
+msgstr "Komentář"
+
+#: admin/class-automat-nbsp-admin.php:245
+msgid "Widget"
+msgstr "Widget"
+
+#: admin/class-automat-nbsp-admin.php:254
+msgid "Number"
+msgstr "Číslo"
+
+#: admin/class-automat-nbsp-admin.php:312
+msgid ""
+"Use <code>&lt;?php add_nbsp($content); ?&gt;</code> to print the custom text "
+"with the automatic <code>&amp;nbsp;</code>. Use <code>&lt;?php "
+"add_nbsp($content, false); ?&gt;</code> to only return."
+msgstr ""
+"Použij kód <code>&lt;?php add_nbsp($content); ?&gt;</code> k automatickému "
+"vložení pevných mezer a vypsání textu. Použij kód <code>&lt;?php add_nbsp($content, false); ?"
+"&gt;</code> pro vložení pevných mezer, ale ne vypíše text."
+
+#: admin/class-automat-nbsp-admin.php:332
+msgid ""
+"Add <code>&amp;nbsp;</code> after each word or&nbsp;phrase from the list."
+msgstr ""
+"Přidat kód <code>&amp;nbsp;</code> za každé slovo nebo frázi ze seznamu."
+
+#: admin/class-automat-nbsp-admin.php:353
+msgid ""
+"If enabled, you need to type variants of word manually. <br> For example: "
+"'and', 'AND', 'And' etc."
+msgstr ""
+"Je-li zapnuto, je nutné zadat různé varianty slov manuálně. Například "
+"‚nebo‘, ‚NEBO, ‚Nebo‘ atd."
+
+#: admin/class-automat-nbsp-admin.php:374
+msgid ""
+"Add <code>&amp;nbsp;</code> before punctuation marks as <br> <code>!</"
+"code><code>?</code><code>:</code><code>;</code><code>%</code><code>«</"
+"code><code>»</code>"
+msgstr ""
+"Přidat <code>&amp;nbsp;</code> před značky jako <br> <code>!</code><code>?</"
+"code><code>:</code><code>;</code><code>%</code><code>«</code><code>»</code>"
+
+#: admin/class-automat-nbsp-admin.php:395
+msgid "Add non-breaking spaces to contents"
+msgstr "Přidat pevné mezery do článků"
+
+#: admin/class-automat-nbsp-admin.php:416
+msgid "Add non-breaking spaces to titles"
+msgstr "Přidat pevné mezery do titulků"
+
+#: admin/class-automat-nbsp-admin.php:437
+msgid "Add non-breaking spaces to excerpts"
+msgstr "Přidat pevné mezery do perexů"
+
+#: admin/class-automat-nbsp-admin.php:458
+msgid "Add non-breaking spaces to comments"
+msgstr "Přidat pevné mezery do komentářů"
+
+#: admin/class-automat-nbsp-admin.php:479
+msgid "Add non-breaking spaces to widgets"
+msgstr "Přidat pevné mezery do widgetů"
+
+#: admin/class-automat-nbsp-admin.php:501
+msgid "Add non-breaking spaces to numbers"
+msgstr "Přidat pevné mezery k číslům"
+
+#: admin/class-automat-nbsp-admin.php:546
+msgid "Choose articles that you do not want to use auto nbsp."
+msgstr "Vyber články u kterých nechceš pevné mezery používat."
