@@ -143,7 +143,7 @@
 			$this->plugin_screen_hook_suffix = add_menu_page(
 					__( 'Automatic NBSP options', 'automat-nbsp' ),
 					__( 'NBSP Settings', 'automat-nbsp' ),
-					'edit_others_posts',
+					'editor',
 					'automat-nbsp',
 					array( $this, 'display_options_page' ),
 					'dashicons-book-alt'
